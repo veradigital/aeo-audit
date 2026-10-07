@@ -1,0 +1,44 @@
+# Copy to sites.toml (`aeo-audit init`) or add a block per site.
+# Stack does not matter for audits. Apply uses the CMS/host already there.
+
+[example]
+url = "https://www.example.com"
+name = "Example Co"
+stack = "wordpress"          # wordpress | next | webflow | other
+host = "pantheon"            # pantheon | vercel | wpengine | other
+vertical = "B2B software"
+city = "Springfield, IL"
+service_area = ["Springfield", "Riverside", "Lakewood"]
+tier = ""                    # optional label you use yourself
+money_action = "https://www.example.com/contact/"
+gsc_property = ""            # e.g. "https://www.example.com/" or "sc-domain:example.com"
+gbp_location = ""            # e.g. "locations/1234567890"
+gbp_account = ""             # e.g. "accounts/1234567890"
+phone = "(312) 555-0100"
+hours = "Mon-Fri 9am-5pm"
+services = ["consulting", "software", "support"]
+key_pages = ["/", "/about/", "/contact/", "/blog/"]
+page_keyphrases = [
+  {path = "/", keyphrase = "B2B software consulting"},
+  {path = "/about/", keyphrase = "about example co"},
+]
+prompts = [
+  "Best [vertical] for [buyer job]",
+  "Does [Name] do [top offer]?",
+  "[Name] vs [obvious competitor]",
+  "[Name] [city] contact",
+]
+competitors = [
+  {name = "Competitor A", url = "https://competitor-a.com", place_id = ""},
+  "Competitor B",
+]
+
+# Optional: per-site meta/title audit rules. Omit the whole section to use defaults.
+# See playbooks/meta-descriptions.md for the full rule set and thresholds.
+# [example.meta_rules]
+# product_required_pages = ["/", "/product/"]
+# brand_suffix = "Example Co"
+# require_city = false
+# banned_superlatives = ["industry-leading", "world-class"]
+# [example.meta_rules.spelling_rules]
+# "mis-spelling" = "correct spelling"

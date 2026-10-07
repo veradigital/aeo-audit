@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aeo-audit"
+dynamic = ["version"]
+description = "Answer-engine audit for a public site: crawler gates, titles, schema, and entity consistency. Pass, warn, or fail."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Nathan Herring"}]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/veradigital/aeo-audit"
+
+[project.scripts]
+aeo-audit = "aeo_audit.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "aeo_audit.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["aeo_audit*"]
